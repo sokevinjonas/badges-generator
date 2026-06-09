@@ -1,0 +1,48 @@
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient radial -->
+    <radialGradient id="grad_premium_player" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#B794F4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#805AD5;stop-opacity:1" />
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow_premium_player" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Shadow filter -->
+    <filter id="shadow_premium_player">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Shine gradient -->
+    <radialGradient id="shine_premium_player">
+      <stop offset="0%" stop-color="white" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Outer glow circle -->
+  <circle cx="128" cy="128" r="116"
+          fill="#9F7AEA" opacity="0.4" filter="url(#glow_premium_player)"/>
+
+  <!-- Main badge circle with gradient -->
+  <circle cx="128" cy="128" r="108"
+          fill="url(#grad_premium_player)"
+          stroke="#FFFFFF" stroke-width="8"
+          filter="url(#shadow_premium_player)"/>
+
+  <!-- Inner shine effect -->
+  <circle cx="113" cy="113" r="54"
+          fill="url(#shine_premium_player)" opacity="0.25"/>
+
+  <!-- Icon au centre -->
+  <g transform="translate(80, 80) scale(1.5)">
+    <path fill="#fff" d="M324.52 191.715a97.542 97.542 0 0 0-4.228-4.229L256 22.303l-64.291 165.183a93.225 93.225 0 0 0-4.222 4.224L22.301 255.998l165.179 64.291a97.542 97.542 0 0 0 4.229 4.229L256 489.697l64.284-165.174a95.208 95.208 0 0 0 4.237-4.233l165.178-64.287zM256 297.773c-23.067 0-41.77-18.705-41.77-41.775 0-23.067 18.703-41.767 41.77-41.767 23.068 0 41.767 18.7 41.767 41.767 0 23.07-18.7 41.775-41.767 41.775z"/>
+  </g>
+</svg>

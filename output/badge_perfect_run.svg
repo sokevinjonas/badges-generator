@@ -1,0 +1,48 @@
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient radial -->
+    <radialGradient id="grad_perfect_run" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#B794F4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#805AD5;stop-opacity:1" />
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow_perfect_run" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Shadow filter -->
+    <filter id="shadow_perfect_run">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Shine gradient -->
+    <radialGradient id="shine_perfect_run">
+      <stop offset="0%" stop-color="white" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Outer glow circle -->
+  <circle cx="128" cy="128" r="116"
+          fill="#9F7AEA" opacity="0.4" filter="url(#glow_perfect_run)"/>
+
+  <!-- Main badge circle with gradient -->
+  <circle cx="128" cy="128" r="108"
+          fill="url(#grad_perfect_run)"
+          stroke="#FFFFFF" stroke-width="8"
+          filter="url(#shadow_perfect_run)"/>
+
+  <!-- Inner shine effect -->
+  <circle cx="113" cy="113" r="54"
+          fill="url(#shine_perfect_run)" opacity="0.25"/>
+
+  <!-- Icon au centre -->
+  <g transform="translate(80, 80) scale(1.5)">
+    <path fill="#fff" d="M48.906 19.656v10.782c0 103.173 10.53 206.07 41.313 289.53 30.78 83.463 82.763 148.094 164.53 170.563l2.188.626 2.25-.5c89.686-19.12 142.322-84.028 171.187-168.344 28.865-84.315 35.406-188.656 35.406-291.875v-10.78l-10.655 1.53C323.26 39.954 191.452 40 59.595 21.188l-10.69-1.53zM67.75 41.03c63.242 8.536 126.495 12.792 189.75 12.782v184.532h174.78c-4.905 27.572-11.31 53.747-19.592 77.937-27.348 79.884-73.757 137.33-155.157 155.564-.008-.003-.02.003-.03 0v-233.5H86.53c-12.87-60.99-18.277-128.81-18.78-197.313z"/>
+  </g>
+</svg>
