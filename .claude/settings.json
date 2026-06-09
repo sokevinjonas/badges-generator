@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node generate-badges-icons.cjs)",
+      "Bash(curl -I \"https://game-icons.net/icons/ffffff/000000/1x1/trophy.svg\")",
+      "Bash(curl -I \"https://game-icons.net/1x1/delapouite/trophy.svg\")"
+    ]
+  }
+}
