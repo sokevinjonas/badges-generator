@@ -2,8 +2,8 @@
   <defs>
     <!-- Gradient radial -->
     <radialGradient id="grad_rising_star" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#63B3ED;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#3182CE;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#3D9EFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0066E0;stop-opacity:1" />
     </radialGradient>
 
     <!-- Glow filter -->
@@ -29,7 +29,7 @@
 
   <!-- Outer glow circle -->
   <circle cx="128" cy="128" r="116"
-          fill="#4299E1" opacity="0.4" filter="url(#glow_rising_star)"/>
+          fill="#0A84FF" opacity="0.4" filter="url(#glow_rising_star)"/>
 
   <!-- Main badge circle with gradient -->
   <circle cx="128" cy="128" r="108"
@@ -42,7 +42,7 @@
           fill="url(#shine_rising_star)" opacity="0.25"/>
 
   <!-- Icon au centre -->
-  <g transform="translate(80, 80) scale(1.5)">
+  <g transform="translate(78, 78) scale(0.1953125)">
     <path fill="#fff" d="m166.4 25.64-12.8 12.72 160 160.04 12.8-12.8-160-159.96zm-32 95.96L128 128l-6.4 6.4 160 160 12.8-12.8-160-160zm-96.08 32L25.6 166.4l160 160 12.8-12.8-160.08-160zm314.78 86.6-29.4 84.1-85.4 26 71 54-1.7 89.2 73.2-50.8 84.4 29.1-25.7-85.3 53.8-71.2-89.1-2-51.1-73.1z"/>
   </g>
 </svg>

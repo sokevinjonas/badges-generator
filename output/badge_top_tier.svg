@@ -2,8 +2,8 @@
   <defs>
     <!-- Gradient radial -->
     <radialGradient id="grad_top_tier" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#B794F4;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#805AD5;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#C9BDFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8A9FF;stop-opacity:1" />
     </radialGradient>
 
     <!-- Glow filter -->
@@ -29,7 +29,7 @@
 
   <!-- Outer glow circle -->
   <circle cx="128" cy="128" r="116"
-          fill="#9F7AEA" opacity="0.4" filter="url(#glow_top_tier)"/>
+          fill="#B8A9FF" opacity="0.4" filter="url(#glow_top_tier)"/>
 
   <!-- Main badge circle with gradient -->
   <circle cx="128" cy="128" r="108"
@@ -42,7 +42,7 @@
           fill="url(#shine_top_tier)" opacity="0.25"/>
 
   <!-- Icon au centre -->
-  <g transform="translate(80, 80) scale(1.5)">
+  <g transform="translate(78, 78) scale(0.1953125)">
     <path fill="#fff" d="M255 471 91.7 387V41h328.6v346zm-147.3-93.74L255 453l149.3-75.76V57H107.7v320.26zm187.61-168.34-14.5-46 38.8-28.73-48.27-.43L256 87.94l-15.33 45.78-48.27.43 38.8 28.73-14.5 46 39.31-28zM254.13 311.5l98.27-49.89v-49.9l-98.14 49.82-94.66-48.69v50zm.13 32.66-94.66-48.69v50l94.54 48.62 98.27-49.89v-49.9z"/>
   </g>
 </svg>

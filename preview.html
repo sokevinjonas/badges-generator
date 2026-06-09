@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prévisualisation des badges Arenia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .badge-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .badge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .badge-card img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        .badge-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .badge-rarity {
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .rarity-common { background: linear-gradient(135deg, #A0AEC0, #718096); }
+        .rarity-rare { background: linear-gradient(135deg, #63B3ED, #3182CE); }
+        .rarity-epic { background: linear-gradient(135deg, #B794F4, #805AD5); }
+        .rarity-legendary { background: linear-gradient(135deg, #FFD700, #FFA500); }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Badges Arenia</h1>
+
+        <div class="section">
+            <h2 class="section-title">Performance (8)</h2>
+            <div class="grid">
+                <div class="badge-card"><img src="output/badge_champion.svg"><div class="badge-name">Champion</div><span class="badge-rarity rarity-legendary">Legendary</span></div>
+                <div class="badge-card"><img src="output/badge_runner_up.svg"><div class="badge-name">Runner-up</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_podium_finisher.svg"><div class="badge-name">Podium Finisher</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_top_tier.svg"><div class="badge-name">Top Tier</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_elite_player.svg"><div class="badge-name">Elite Player</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_rising_star.svg"><div class="badge-name">Rising Star</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_grand_champion.svg"><div class="badge-name">Grand Champion</div><span class="badge-rarity rarity-legendary">Legendary</span></div>
+                <div class="badge-card"><img src="output/badge_arenia_legend.svg"><div class="badge-name">Arenia Legend</div><span class="badge-rarity rarity-legendary">Legendary</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Participation (5)</h2>
+            <div class="grid">
+                <div class="badge-card"><img src="output/badge_first_blood.svg"><div class="badge-name">First Blood</div><span class="badge-rarity rarity-common">Common</span></div>
+                <div class="badge-card"><img src="output/badge_regular_player.svg"><div class="badge-name">Regular Player</div><span class="badge-rarity rarity-common">Common</span></div>
+                <div class="badge-card"><img src="output/badge_tournament_veteran.svg"><div class="badge-name">Tournament Veteran</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_century_club.svg"><div class="badge-name">Century Club</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_dedicated_competitor.svg"><div class="badge-name">Dedicated Competitor</div><span class="badge-rarity rarity-rare">Rare</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Streak (5)</h2>
+            <div class="grid">
+                <div class="badge-card"><img src="output/badge_hot_streak.svg"><div class="badge-name">Hot Streak</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_unstoppable.svg"><div class="badge-name">Unstoppable</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_comeback_king.svg"><div class="badge-name">Comeback King</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_perfect_run.svg"><div class="badge-name">Perfect Run</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_night_owl.svg"><div class="badge-name">Night Owl</div><span class="badge-rarity rarity-common">Common</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Jeux - PUBG (3)</h2>
+            <div class="grid">
+                <div class="badge-card"><img src="output/badge_headhunter_pubg.svg"><div class="badge-name">Headhunter</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_chicken_dinner.svg"><div class="badge-name">Chicken Dinner</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_squad_commander.svg"><div class="badge-name">Squad Commander</div><span class="badge-rarity rarity-rare">Rare</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Jeux - eFootball (3)</h2>
+            <div class="grid">
+                <div class="badge-card"><img src="output/badge_goal_machine.svg"><div class="badge-name">Goal Machine</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_clean_sheet.svg"><div class="badge-name">Clean Sheet</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_hat_trick_hero.svg"><div class="badge-name">Hat-trick Hero</div><span class="badge-rarity rarity-epic">Epic</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Jeux - COD Mobile (3)</h2>
+            <div class="grid">
+                <div class="badge-card"><img src="output/badge_sharpshooter.svg"><div class="badge-name">Sharpshooter</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_mvp.svg"><div class="badge-name">MVP</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_killstreak_master.svg"><div class="badge-name">Killstreak Master</div><span class="badge-rarity rarity-epic">Epic</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Jeux - Free Fire (2)</h2>
+            <div class="grid">
+                <div class="badge-card"><img src="output/badge_booyah_king.svg"><div class="badge-name">Booyah King</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_hot_drop.svg"><div class="badge-name">Hot Drop</div><span class="badge-rarity rarity-rare">Rare</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Jeux - Mobile Legends (3)</h2>
+            <div class="grid">
+                <div class="badge-card"><img src="output/badge_lord_slayer.svg"><div class="badge-name">Lord Slayer</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_maniac.svg"><div class="badge-name">Maniac</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_savage.svg"><div class="badge-name">Savage</div><span class="badge-rarity rarity-legendary">Legendary</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Organisateur (8)</h2>
+            <div class="grid">
+                <div class="badge-card"><img src="output/badge_event_creator.svg"><div class="badge-name">Event Creator</div><span class="badge-rarity rarity-common">Common</span></div>
+                <div class="badge-card"><img src="output/badge_tournament_host.svg"><div class="badge-name">Tournament Host</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_trusted_organizer.svg"><div class="badge-name">Trusted Organizer</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_elite_host.svg"><div class="badge-name">Elite Host</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_master_organizer.svg"><div class="badge-name">Master Organizer</div><span class="badge-rarity rarity-legendary">Legendary</span></div>
+                <div class="badge-card"><img src="output/badge_fast_launch.svg"><div class="badge-name">Fast Launch</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_fair_play.svg"><div class="badge-name">Fair Play</div><span class="badge-rarity rarity-rare">Rare</span></div>
+                <div class="badge-card"><img src="output/badge_prize_distributor.svg"><div class="badge-name">Prize Distributor</div><span class="badge-rarity rarity-epic">Epic</span></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Premium (2)</h2>
+            <div class="grid">
+                <div class="badge-card"><img src="output/badge_premium_player.svg"><div class="badge-name">Premium Player</div><span class="badge-rarity rarity-epic">Epic</span></div>
+                <div class="badge-card"><img src="output/badge_vip.svg"><div class="badge-name">VIP</div><span class="badge-rarity rarity-legendary">Legendary</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

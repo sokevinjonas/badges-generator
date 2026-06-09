@@ -14,23 +14,23 @@ const path = require('path');
 const OUTPUT_DIR = path.join(__dirname, 'output');
 const ICONS_BASE_DIR = path.join(__dirname, 'game-icons.net.svg/icons/ffffff/transparent/1x1');
 
-// Couleurs par rareté
+// Couleurs par rareté (Charte Arenia - Electric Gaming)
 const RARITIES = {
   common: {
-    gradient: ['#A0AEC0', '#718096'],
-    glow: '#A0AEC0',
+    gradient: ['#B0B3C0', '#6B6F80'], // Gris texte secondaire/tertiaire
+    glow: '#B0B3C0',
   },
   rare: {
-    gradient: ['#63B3ED', '#3182CE'],
-    glow: '#4299E1',
+    gradient: ['#3D9EFF', '#0066E0'], // Bleu électrique Arenia (primary hover → active)
+    glow: '#0A84FF', // Primary Arenia
   },
   epic: {
-    gradient: ['#B794F4', '#805AD5'],
-    glow: '#9F7AEA',
+    gradient: ['#C9BDFF', '#B8A9FF'], // Violet gaming Arenia (accent hover → accent)
+    glow: '#B8A9FF', // Accent Arenia
   },
   legendary: {
-    gradient: ['#FFD700', '#FFA500'],
-    glow: '#FFD700',
+    gradient: ['#FFB800', '#FFA500'], // Or premium Arenia
+    glow: '#FFB800', // Gold Arenia
   },
 };
 
@@ -140,11 +140,18 @@ function extractSVGContent(svgString) {
 /**
  * Générer badge avec icône intégrée
  */
-function generateBadgeWithIcon(badge, iconContent) {
+function generateBadgeWithIcon(badge, iconData) {
   const size = 256;
   const center = size / 2;
   const radius = size / 2 - 20;
   const colors = RARITIES[badge.rarity];
+
+  // Calculer le scale pour l'icône (512x512 -> ~100x100)
+  const iconSize = 100;
+  const viewBoxParts = iconData.viewBox.split(' ');
+  const originalSize = parseFloat(viewBoxParts[2]) || 512;
+  const scale = iconSize / originalSize;
+  const iconOffset = (size - iconSize) / 2;
 
   const svg = `<svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -190,8 +197,8 @@ function generateBadgeWithIcon(badge, iconContent) {
           fill="url(#shine_${badge.id})" opacity="0.25"/>
 
   <!-- Icon au centre -->
-  <g transform="translate(${center - 48}, ${center - 48}) scale(1.5)">
-    ${iconContent}
+  <g transform="translate(${iconOffset}, ${iconOffset}) scale(${scale})">
+    ${iconData.content}
   </g>
 </svg>`;
 
@@ -211,10 +218,13 @@ async function main() {
     process.exit(1);
   }
 
-  // Créer dossier de sortie
-  if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  // Nettoyer et recréer le dossier de sortie (suppression complète)
+  if (fs.existsSync(OUTPUT_DIR)) {
+    fs.rmSync(OUTPUT_DIR, { recursive: true, force: true });
+    console.log('🗑️  Ancien dossier output/ supprimé\n');
   }
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  console.log('📁 Nouveau dossier output/ créé\n');
 
   let successCount = 0;
   let errorCount = 0;
@@ -235,10 +245,10 @@ async function main() {
 
       // Lire l'icône
       const iconSvg = fs.readFileSync(iconPath, 'utf8');
-      const iconContent = extractSVGContent(iconSvg);
+      const iconData = extractSVGContent(iconSvg);
 
       // Générer le badge
-      const badgeSvg = generateBadgeWithIcon(badge, iconContent);
+      const badgeSvg = generateBadgeWithIcon(badge, iconData);
       const badgePath = path.join(OUTPUT_DIR, `badge_${badge.id}.svg`);
       fs.writeFileSync(badgePath, badgeSvg);
 
